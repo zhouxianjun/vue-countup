@@ -1,7 +1,10 @@
 <template>
     <p :style="mainStyle" :class="mainClass">
         <slot name="leftText"></slot>
-        <span :style="countStyle" :class="countClass"><span :id="countId">{{ initCount }}</span><span>{{ unitText }}</span></span>
+        <span :style="countStyle" :class="countClass">
+            <span :id="countId">{{ initCount }}</span>
+            <span v-if="simplify">{{ unitText }}</span>
+        </span>
         <slot name="rightText"></slot>
     </p>
 </template>
@@ -142,7 +145,9 @@ export default {
             } else {
                 endVal = this.endVal;
             }
-            this.counter.update(endVal);
+            if (this.counter && this.counter.update) {
+                this.counter.update(endVal);
+            }
         }
     }
 };
