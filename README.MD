@@ -55,5 +55,6 @@ export default {
 | uneasing    | 禁止动画                 | Boolean | -        | false                                             |
 | ungroup     | 禁止分隔                 | Boolean | -        | false                                             |
 | separator   | 数字分隔符               | String  | -        | ,                                                 |
-| decimals    | 小数分隔符               | String  | -        | .                                                 |
+| decimals    | 小数位数                 | Number  | -        | 0                                                 |
+| decimal     | 小数分隔符               | String  | -        | .                                                 |
 | unit        | 自定义单位               | Array   | -        | [[3, 'K+'], [6, 'M+'], [9, 'B+']]                 |
